@@ -1,0 +1,38 @@
+1、compressibleWaveFoam
+    1）基于compressibleInterFoam
+    2）与waveFoam的修改方式一致
+        1、修改createFiels.H 
+            1）删除#include "readGravitationalAcceleration.H"
+            2）删除#include "readhRef.H"
+            3）删除#include "gh.H"
+            4）添加gh和ghf的定义
+            5）添加relaxing的定义
+        2、修改compressibleWaveFoam.C
+            1）添加#include "relaxationZone.H"
+            2）删除#include "postProcess.H"
+            3）添加#include "readGravitationalAcceleration.H"
+            4）添加#include "readWaveProperties.H"
+            5）添加relaxing.correct()
+结果：
+    1）waveFoam中relaxing.correct()位于mixture.correct()之前，而compressibleWaveFoam中
+    mixture.correct()在TEqn.H中
+
+2、compressibleWaveCorrectFoam
+    1）基于compressibleWaveFoam
+    2）修改compressibleWaveFoam.C
+        1、删除relaxing.correct()
+    3）修改compressibleAlphaEqnSubCycle.H
+        1、添加relaxing.correct()
+        2、添加alpha2 = 1.0 - alpha1
+        3、添加mixture.correct()
+
+
+
+
+
+
+
+
+
+
+

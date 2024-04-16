@@ -1,0 +1,1 @@
+1、对于interFoam中constant/turbulenceProperties的density取为uniform的情况，设置了正确的粘性力计算方式

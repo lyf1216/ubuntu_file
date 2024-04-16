@@ -1,0 +1,1 @@
+1、增加了ThermalDiffusivity的6参数New函数

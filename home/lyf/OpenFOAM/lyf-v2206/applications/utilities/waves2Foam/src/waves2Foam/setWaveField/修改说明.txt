@@ -1,0 +1,15 @@
+1、setWaveField.H
+    1）将p均修改为pd
+
+2、setWaveField.C
+    1）将p均修改为pd
+    2）修改pTarget
+        1、读取constant/waveProperties中totalPressure的值，若不存在则取为0
+        2、令水下的pTarget = waveProps_->pExcess变为pTarget += waveProps_->pExcess
+
+
+
+
+
+
+

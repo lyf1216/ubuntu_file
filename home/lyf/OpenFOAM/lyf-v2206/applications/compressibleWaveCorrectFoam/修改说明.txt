@@ -1,0 +1,32 @@
+1、删除以下文件夹：
+    1）compressibleInterDyMFoam
+    2）overCompressibleInterDyMFoam
+    3）compressibleInterFilmFoam
+2、修改compressibleWaveFoam和compressibleWaveIsoFoam的Make文件
+    1）修改options文件EXE_INC
+        1、修改VoF的路径
+        2、修改twoPhaseMixtureThermo的路径
+        3、修改VoFphaseCompressibleTurbulenceModels路径
+        4、添加WAVES2FOAM中的路径
+    2）修改options文件EXE_LIBS
+        1、添加WAVES2FOAM中的库
+3、修改compressibleWaveFoam.C
+    1）添加#include "relaxationZone.H"
+    2）删除#include "postProcess.H"
+    3）在#include "createMesh.H"之后添加：
+        1、#include "readGravitationalAcceleration.H"
+        2、#include "readWaveProperties.H"
+    4）修改createFields.H
+        1、删除#include "readGravitationalAcceleration.H"
+        2、删除#include "readhRef.H"
+        3、删除#include "gh.H"
+        4、添加gh和ghf的定义
+        5、在最后添加relaxing的定义
+    5）在相分数方程求解后添加relaxing.correct()
+
+
+
+
+
+
+

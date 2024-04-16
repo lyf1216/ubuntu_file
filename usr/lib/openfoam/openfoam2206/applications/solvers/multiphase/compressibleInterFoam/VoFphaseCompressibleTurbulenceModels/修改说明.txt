@@ -1,0 +1,1 @@
+1、调用compressible::turbulenceModel的New函数时，调用自定义的5参数版本，即New(rho, U, rhoPhi, phi, mixture)

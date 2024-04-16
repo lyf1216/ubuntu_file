@@ -1,0 +1,5 @@
+1、p修改为pd
+2、删除externalWaveForcing
+3、添加alpha、pd的边界场更新
+4、添加rho的定义
+5、添加p的更新和写出

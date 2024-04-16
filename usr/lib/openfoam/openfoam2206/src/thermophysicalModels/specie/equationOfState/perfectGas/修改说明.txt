@@ -1,0 +1,2 @@
+1、perfectGas.H、perfectGas.C和perfectGasI.H并不存在修改
+2、perfectGas_userDefinedI.H修改了rho函数和Z函数，令用户可自定义状态方程
